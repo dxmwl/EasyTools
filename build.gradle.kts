@@ -45,3 +45,11 @@ tasks {
         token.set(System.getenv("PUBLISH_TOKEN"))
     }
 }
+
+dependencies {
+    implementation("cn.hutool:hutool-all:5.8.37")
+    // https://mvnrepository.com/artifact/com.google.zxing/core
+    implementation("com.google.zxing:core:3.1.0")
+    // https://mvnrepository.com/artifact/com.google.zxing/javase
+    implementation("com.google.zxing:javase:3.1.0")
+}

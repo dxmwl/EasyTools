@@ -8,16 +8,16 @@
     <name>EasyTools</name>
 
     <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
-    <vendor email="support@yourcompany.com" url="https://www.yourcompany.com">YourCompany</vendor>
+    <vendor email="1529097251@qq.com" url="https://www.dxmwl.com">常利兵</vendor>
 
     <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
          Simple HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
          Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
     <description><![CDATA[
-    这是一款集合了常用工具的插件，如：时间戳转换等。从此，您无需打开其他在线工具即可使用，我们将会持续优化更新功能，欢迎大家使用并反馈使用。<br>
+    这是一款集合了常用工具的插件，如：JSON格式化等。从此，您无需打开其他在线工具即可使用，我们将会持续优化更新功能，欢迎大家使用并反馈使用。<br>
     <h1>功能介绍：</h1>
     <ol>
-        <li>时间戳转换</li>
+         <li>JSON格式化</li>
     </ol>
   ]]></description>
 
@@ -37,8 +37,13 @@
     <!-- Extension points defined by the plugin.
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
     <extensions defaultExtensionNs="com.intellij">
-        <toolWindow factoryClass="com.clb.easytools.window.ToolsHomeWindowFactory" id="toolsWindow" anchor="right"
-                    icon="/META-INF/pluginIcon.svg"/>
+        <applicationService serviceInterface="com.clb.easytools.service.CacheService"
+                            serviceImplementation="com.clb.easytools.service.impl.CacheServiceImpl"/>'
+        <applicationService serviceInterface="com.clb.easytools.service.ToolkitCommandService"
+                            serviceImplementation="com.clb.easytools.service.impl.ToolkitCommandServiceImpl"/>'
+
+        <runAnything.executionProvider id="runAnythingExecutionProvider"
+                                       implementation="com.clb.easytools.extensions.runanything.RunAnythingToolkitProvider"/>
     </extensions>
     <actions>
 
